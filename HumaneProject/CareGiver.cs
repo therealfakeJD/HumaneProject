@@ -17,6 +17,7 @@ namespace HumaneProject
         public long phoneNumber { get; set; }
         public string adoptedName { get; set; }
         public int adoptedAge { get; set; }
+        
 
         public CareGiver()
         {
@@ -120,6 +121,8 @@ namespace HumaneProject
             }
             return adoptedAge;
         }
+
+      
         public string display()
         {
             return "CareGiver Info: " 

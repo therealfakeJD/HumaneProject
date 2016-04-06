@@ -30,9 +30,9 @@ namespace HumaneProject
                 Console.WriteLine("1. Add a new orphaned Cat to the system");
                 Console.WriteLine("2. Add a new orphaned Dog to the system");
                 Console.WriteLine("3. Collect a profile from a possibly interested Care Giver");
-                Console.WriteLine("4. Print list of dogs currently in the system");
-                Console.WriteLine("5. Print list of cats currently in the system");
-                Console.WriteLine("6. Print list of potential Care Givers currently in the system");
+                Console.WriteLine("4. Print list of shelter animals currently in the system");
+                Console.WriteLine("5. Print list of potential Care Givers currently in the system");
+                Console.WriteLine("6. Remove a dog from the system");
                 Console.WriteLine("7. Exit Menu");
                 Console.WriteLine("");
                 choice = Convert.ToInt32(Console.ReadLine());
@@ -56,17 +56,17 @@ namespace HumaneProject
 
                     case 4:
 
-                        shelterMethods.printDogs();
+                        shelterMethods.printAnimalList();
                         break;
 
                     case 5:
 
-                        shelterMethods.printCats();
+                        shelterMethods.printCareGivers();
                         break;
 
                     case 6:
 
-                        shelterMethods.printCareGivers();
+                        shelterMethods.removeDogs();
                         break;
 
                     case 7:
@@ -78,6 +78,8 @@ namespace HumaneProject
                         if (choice > 7)
                         {
                             Console.WriteLine("You must pick a number from the menu");
+                            Console.WriteLine("Please press enter to continue");
+                            Console.ReadLine();
                             RunShelterUI();
                         }
                         break;

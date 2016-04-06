@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,6 +13,7 @@ namespace HumaneProject
         public string sex { get; set; }
         public string name { get; set; }
         public int weight { get; set; }
+        public int ShelterID { get; set; }
         public int amountFoodPerDay { get; set; }
         public bool hasShots { get; set; }
         public bool giveShots { get; set; }

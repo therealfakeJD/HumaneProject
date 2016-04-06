@@ -34,13 +34,18 @@ namespace HumaneProject
         }
         public Dog addDogs()
         {
-            Dog dog = shelter.AddDogToList();
+            Dog dog = shelter.createNewDog();
             return dog;
         }
 
-        public void printDogs()
+        public void removeDogs()
         {
-            shelter.printDogInList();
+            shelter.removeDog();
+        }
+
+        public void printAnimalList()
+        {
+            shelter.printAnimalList();
         }
 
         public Cat addCats()
@@ -49,10 +54,6 @@ namespace HumaneProject
             return cat;
         }
 
-        public void printCats()
-        {
-            shelter.printCatInList();
-        }
 
         public void printWelcome()
         {

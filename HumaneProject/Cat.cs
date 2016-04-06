@@ -19,11 +19,13 @@ namespace HumaneProject
         public string shelterCareGiver { get; set; }
         public bool hasBeenAdopted { get; set; }
         public int cageNumber { get; set; }
+        
+
 
 
         public Cat()
         {
-
+           
         }
 
 

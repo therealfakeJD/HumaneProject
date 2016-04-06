@@ -10,7 +10,7 @@ namespace HumaneProject
 {
     public class Dog : Animal
     {
-        
+        public int shelterCode { get; set; }
         public string dogBreed { get; set; }
         public string sex { get; set; }
         public string name { get; set; }
@@ -21,16 +21,14 @@ namespace HumaneProject
         public string shelterCareGiver { get; set; }
         public bool hasBeenAdopted { get; set; }
         public int cageNumber { get; set; }
-       
-
-        public Dog()
-        {
-            
-        }
+        
 
         
 
-      
+        public Dog()
+        {
+          
+        }
 
         public string AddBreed()
         {
@@ -52,6 +50,21 @@ namespace HumaneProject
             name = Console.ReadLine();
             return name;
         }
+
+        public int getShelterCode()
+        {
+             Console.WriteLine("ID Number: ");
+                try
+                {
+                    shelterCode = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid Entry -- Please Enter a number");
+                    getShelterCode();
+                }
+                return shelterCode;
+}
 
         public override Int32 GetWeight()
         {
@@ -162,7 +175,7 @@ namespace HumaneProject
 
         public override string Display()
         {
-            return   "\nBreed: " + dogBreed
+            return "\nBreed: " + dogBreed
                    + "\nName: " + name
                    + "\nSex " + sex
                    + "\nCurrent Weight: " + weight
