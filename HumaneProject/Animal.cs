@@ -8,7 +8,7 @@ namespace HumaneProject
 {
     public abstract class Animal
     {
-        public string animalType { get; set; }
+        
         public string sex { get; set; }
         public string name { get; set; }
         public int weight { get; set; }
@@ -22,7 +22,7 @@ namespace HumaneProject
         public int cageNumber { get; set; }
         
 
-        abstract public string AddAnimalType();
+       
         abstract public string GetSex();
         abstract public string GetName();
         abstract public int GetWeight();
@@ -33,7 +33,8 @@ namespace HumaneProject
         abstract public string GetShelterCareGiver();
         abstract public bool HasBeenAdopted();
         abstract public int GetCurrentCageNumber();
-        
+        abstract public string Display();
+
 
     }
 }

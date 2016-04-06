@@ -35,14 +35,30 @@ namespace HumaneProject
         public int addAge()
         {
             Console.WriteLine("Age: ");
-            age = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                age = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid Entry -- Please enter a number");
+                addAge();
+            }
             return age;
         }
 
         public long addSocialSecurityNumber()
         {
             Console.WriteLine("Social Security Number: ");
-            socialSecurityNumber = Convert.ToInt64(Console.ReadLine());
+            try
+            {
+                socialSecurityNumber = Convert.ToInt64(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid Entry -- Please Enter a number");
+                addSocialSecurityNumber();
+            }
             return socialSecurityNumber;
         }
 
@@ -56,7 +72,15 @@ namespace HumaneProject
         public long addPhoneNumber()
         {
             Console.WriteLine("Phone Number: ");
-            phoneNumber = Convert.ToInt64(Console.ReadLine());
+            try
+            {
+                phoneNumber = Convert.ToInt64(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid Entry -- Please Enter a number");
+                addPhoneNumber();
+            }
             return phoneNumber;
         }
 
@@ -85,7 +109,15 @@ namespace HumaneProject
         public int addAdoptedAnimalAge()
         {
             Console.WriteLine("Adopted Animal's Age: ");
-            adoptedAge = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                adoptedAge = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid Entry -- Please Enter a number");
+                addAdoptedAnimalAge();
+            }
             return adoptedAge;
         }
         public string display()

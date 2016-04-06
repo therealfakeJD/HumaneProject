@@ -13,10 +13,8 @@ namespace HumaneProject
             System system = new System();
             system.getCareGiverInformation();
             */
-            System system = new System();
-            system.manageCareGivers();  
-            system.manageDogs();          
-            Console.ReadLine();
+            ShelterUI shelterUI = new ShelterUI();
+            
         }
 
 //        Requirements:

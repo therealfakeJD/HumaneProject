@@ -45,11 +45,13 @@
   <ItemGroup>
     <Compile Include="Animal.cs" />
     <Compile Include="CareGiver.cs" />
+    <Compile Include="Cat.cs" />
     <Compile Include="Dog.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shelter.cs" />
-    <Compile Include="System.cs" />
+    <Compile Include="ShelterMethods.cs" />
+    <Compile Include="ShelterUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

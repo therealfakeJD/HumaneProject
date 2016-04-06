@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,38 +12,50 @@ namespace HumaneProject
 {
     public class Shelter
     {
-        public string name { get; set; }
-        public bool adoptionFee { get; set; }
-        public List<Dog> Dogs { get; set; }
-        public List<CareGiver> CareGivers { get; set; }
 
-        public List<CareGiver> AddCareGiverToList()
+        public string name { get; set; }
+        public Dog dog;
+        public Cat cat;
+        public CareGiver careGiver;
+        public bool adoptionFee { get; set; }
+        public List<Animal> Animals;
+        public List<CareGiver> CareGivers;
+
+        public Shelter()
         {
+            name = "Justin's Stupid Fucking Shelter";
+            dog = new Dog();
+            cat = new Cat();
+            careGiver = new CareGiver();
+            Animals = new List<Animal>();
             CareGivers = new List<CareGiver>();
-            CareGiver careGiver = new CareGiver();
-            
-            CareGivers.Add(new CareGiver
-            {
-                name = careGiver.addName(),
-                age = careGiver.addAge(),
-                socialSecurityNumber = careGiver.addSocialSecurityNumber(),
-                address = careGiver.addAddress(),
-                phoneNumber = careGiver.addPhoneNumber(),
-                adoptionFee = careGiver.getAdoptionFee(),
-                adoptedName = careGiver.addAdoptedAnimalName(),
-                adoptedAge = careGiver.addAdoptedAnimalAge(),
-            });
-            return CareGivers;
+        }
+        
+     
+        public CareGiver CreateAddCareGiver()
+        {
+            Console.WriteLine("Please Enter New Owner Information");
+           
+                CareGivers.Add(new CareGiver
+                {
+                    name = careGiver.addName(),
+                    age = careGiver.addAge(),
+                    socialSecurityNumber = careGiver.addSocialSecurityNumber(),
+                    address = careGiver.addAddress(),
+                    phoneNumber = careGiver.addPhoneNumber(),
+                    adoptionFee = careGiver.getAdoptionFee(),
+                    adoptedName = careGiver.addAdoptedAnimalName(),
+                    adoptedAge = careGiver.addAdoptedAnimalAge(),
+                });
+            return careGiver;
         }
 
-        public List<Dog> AddDogToDogList()
+        public Dog AddDogToList()
         {
-            Dogs = new List<Dog>();
-            Dog dog = new Dog();
+            Console.WriteLine("Please Enter Dog Information");
 
-            Dogs.Add(new Dog
+            Animals.Add(new Dog
             {
-                animalType = dog.AddAnimalType(),
                 dogBreed = dog.AddBreed(),
                 sex = dog.GetSex(),
                 name = dog.GetName(),
@@ -51,9 +65,29 @@ namespace HumaneProject
                 adoptionFee = dog.GetAdoptionFee(),
                 shelterCareGiver = dog.GetShelterCareGiver(),
                 hasBeenAdopted = dog.HasBeenAdopted(),
-                cageNumber = dog.GetCurrentCageNumber(),
+                cageNumber = dog.GetCurrentCageNumber()
             });
-            return Dogs;
+            return dog;
+        }
+
+        public Cat AddCatToList()
+        {
+            Console.WriteLine("Please Enter Cat Information");
+
+            Animals.Add(new Cat
+            {
+                catBreed = cat.AddBreed(),
+                sex = cat.GetSex(),
+                name = cat.GetName(),
+                weight = cat.GetWeight(),
+                amountFoodPerDay = cat.GetAmountFedPerDay(),
+                hasShots = cat.HasShots(),
+                adoptionFee = cat.GetAdoptionFee(),
+                shelterCareGiver = cat.GetShelterCareGiver(),
+                hasBeenAdopted = cat.HasBeenAdopted(),
+                cageNumber = cat.GetCurrentCageNumber()
+            });
+            return cat;
         } 
         public void printCareGiverList()
         {
@@ -62,13 +96,34 @@ namespace HumaneProject
                 Console.WriteLine(careGiver.display());
             }
         }
-        public void printDogList()
+
+        public void printDogInList()
         {
-            foreach (Dog dog in Dogs)
+            foreach (Animal dog in Animals)
             {
-                Console.WriteLine(dog.display());
+                Console.WriteLine(dog.Display());
             }
         }
-      
+        
+        public void printCatInList()
+        {
+            foreach (Animal cat in Animals)
+            {
+                Console.WriteLine(cat.Display());
+            }
+        }
+   
+        /*
+        public IEnumerator GetEnumerator()
+        {
+            Console.WriteLine("Full Shelter Animal List");
+            for (int i = 0; i < Animals.Count; i++)
+            {
+                yield return Animals[i];
+              
+            }
+            yield return "No More Animals";
+        }
+        */
     }
 }

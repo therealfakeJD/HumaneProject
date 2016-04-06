@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace HumaneProject
 {
-    public class Dog : Animal
+    public class Cat : Animal
     {
         
-        public string dogBreed { get; set; }
+        public string catBreed { get; set; }
         public string sex { get; set; }
         public string name { get; set; }
         public int weight { get; set; }
@@ -21,22 +19,22 @@ namespace HumaneProject
         public string shelterCareGiver { get; set; }
         public bool hasBeenAdopted { get; set; }
         public int cageNumber { get; set; }
-       
 
-        public Dog()
+
+        public Cat()
         {
-            
+
         }
 
-        
 
-      
+
+  
 
         public string AddBreed()
         {
             Console.WriteLine("Breed: ");
-            dogBreed = Console.ReadLine();
-            return dogBreed;
+            catBreed = Console.ReadLine();
+            return catBreed;
         }
 
         public override String GetSex()
@@ -162,7 +160,7 @@ namespace HumaneProject
 
         public override string Display()
         {
-            return   "\nBreed: " + dogBreed
+            return   "\nBreed: " + catBreed
                    + "\nName: " + name
                    + "\nSex " + sex
                    + "\nCurrent Weight: " + weight
@@ -174,12 +172,7 @@ namespace HumaneProject
                    + "\nCurrent Placement: Dog Cage Number " + cageNumber;
         }
 
-        
+
     }
-
- 
-
 }
-
-    
 
