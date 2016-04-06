@@ -14,7 +14,8 @@ namespace HumaneProject
             system.getCareGiverInformation();
             */
             System system = new System();
-            system.manageCareGivers();            
+            system.manageCareGivers();  
+            system.manageDogs();          
             Console.ReadLine();
         }
 

@@ -9,14 +9,24 @@ namespace HumaneProject
 {
     public class System
     {
-
+        Shelter shelter = new Shelter();
         public void manageCareGivers()
         {
-            Shelter shelter = new Shelter();
             shelter.AddCareGiverToList();
             Console.ReadLine();
             Console.WriteLine("**********************");
             shelter.printCareGiverList();
+            Console.WriteLine("**********************");
+        }
+
+        public void manageDogs()
+        {
+            shelter.AddDogToDogList();
+            Console.ReadLine();
+            Console.WriteLine("**********************");
+            shelter.printDogList();
+            Console.WriteLine("**********************");
+            Console.ReadLine();
         }
 
     }
