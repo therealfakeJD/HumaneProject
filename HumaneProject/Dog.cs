@@ -18,11 +18,8 @@ namespace HumaneProject
         public int amountFoodPerDay { get; set; }
         public bool hasShots { get; set; }
         public decimal adoptionFee { get; set; }
-        public string shelterCareGiver { get; set; }
         public bool hasBeenAdopted { get; set; }
         public int cageNumber { get; set; }
-        
-
         
 
         public Dog()
@@ -51,7 +48,7 @@ namespace HumaneProject
             return name;
         }
 
-        public int getShelterCode()
+        public int GetShelterCode()
         {
              Console.WriteLine("ID Number: ");
                 try
@@ -61,7 +58,7 @@ namespace HumaneProject
                 catch (Exception)
                 {
                     Console.WriteLine("Invalid Entry -- Please Enter a number");
-                    getShelterCode();
+                    GetShelterCode();
                 }
                 return shelterCode;
 }
@@ -96,26 +93,6 @@ namespace HumaneProject
             return amountFoodPerDay;
         }
 
-        public override Boolean HasShots()
-        {
-            Console.WriteLine("Shots: ");
-            if (GiveShots())
-            {
-                Console.WriteLine("Shots Given");
-            }
-            else
-            {
-                Console.WriteLine("Shots Needed");
-            }
-            return hasShots;
-        }
-
-        public override Boolean GiveShots()
-        {
-            Console.WriteLine("Animal has been given shots");
-            hasShots = true;
-            return hasShots;
-        }
 
         public override Decimal GetAdoptionFee()
         {
@@ -132,13 +109,6 @@ namespace HumaneProject
             return adoptionFee;
         }
 
-        public override String GetShelterCareGiver()
-        {
-            Console.WriteLine("Current Shelter Worker in Charge of Care: ");
-            shelterCareGiver = Console.ReadLine();
-            return shelterCareGiver;
-        }
-
         public override Boolean HasBeenAdopted()
         {
             if (hasBeenAdopted)
@@ -149,12 +119,6 @@ namespace HumaneProject
             {
                 Console.WriteLine(name + " is currently waiting to be adopted");
             }
-            return hasBeenAdopted;
-        }
-
-        public bool adopt()
-        {
-            hasBeenAdopted = true;
             return hasBeenAdopted;
         }
 
@@ -181,18 +145,13 @@ namespace HumaneProject
                    + "\nCurrent Weight: " + weight
                    + "\nFood Requirements: " + amountFoodPerDay
                    + "\nShots: " + hasShots
-                   + "\nAdoption Cost: " + adoptionFee
-                   + "\nCurrent Shelter Care Giver: " + shelterCareGiver
                    + "\nHas " + name + " been adopted? " + hasBeenAdopted
                    + "\nCurrent Placement: Dog Cage Number " + cageNumber;
         }
 
-        
-    }
+     }
 
- 
-
-}
+ }
 
     
 

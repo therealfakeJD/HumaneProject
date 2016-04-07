@@ -13,8 +13,8 @@ namespace HumaneProject
             System system = new System();
             system.getCareGiverInformation();
             */
-            ShelterUI shelterUI = new ShelterUI();
-            
+            ShelterSystem shelterSystem = new ShelterSystem();
+
         }
 
 //        Requirements:

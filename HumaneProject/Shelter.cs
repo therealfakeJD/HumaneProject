@@ -16,112 +16,114 @@ namespace HumaneProject
         public string name { get; set; }
         public Dog dog = new Dog();
         public Cat cat = new Cat();
+        public decimal adoptionFee { get; set; }
         public CareGiver careGiver = new CareGiver();
-        public bool adoptionFee { get; set; }
-        public List<Animal> Animals = new List<Animal>();
+        public List<List<Animal>> cageList = new List<List<Animal>>();
+        public List<Animal> Dogs = new List<Animal>();
+        public List<Animal> Cats = new List<Animal>(); 
         public List<CareGiver> CareGivers = new List<CareGiver>();
         public List<Cages> Cages = new List<Cages>(); 
         
-
-
         public Shelter()
         {
-            name = "Justin's Stupid Fucking Shelter";
-            /*
-            dog = new Dog();
-            cat = new Cat();
-            careGiver = new CareGiver();
-            Cages = new List<Cages>();
-            Animals = new List<Animal>();
-            CareGivers = new List<CareGiver>();
-            */
+            name = "Justin's Humane Society Shelter";
         }
-        
-     
-        public CareGiver CreateAddCareGiver()
+
+        public bool GiveShots()
+        {
+            dog.hasShots = true;
+            return dog.hasShots;
+        }
+
+        public CareGiver AddCareGiver()
         {
             Console.WriteLine("Please Enter New Owner Information");
            
                 CareGivers.Add(new CareGiver
                 {
-                    name = careGiver.addName(),
-                    age = careGiver.addAge(),
-                    socialSecurityNumber = careGiver.addSocialSecurityNumber(),
-                    address = careGiver.addAddress(),
-                    phoneNumber = careGiver.addPhoneNumber(),
-                    adoptionFee = careGiver.getAdoptionFee(),
-                    adoptedName = careGiver.addAdoptedAnimalName(),
-                    adoptedAge = careGiver.addAdoptedAnimalAge()
+                    name = careGiver.AddName(),
+                    age = careGiver.AddAge(),
+                    socialSecurityNumber = careGiver.AddSocialSecurityNumber(),
+                    address = careGiver.AddAddress(),
+                    phoneNumber = careGiver.AddPhoneNumber(),
+                    adoptedName = careGiver.AddAdoptedAnimalName(),
+                    adoptedAge = careGiver.AddAdoptedAnimalAge()
                 });
             return careGiver;
         }
-
-        public Dog createNewDog()
+    
+        public Dog AddDog()
         {
             Console.WriteLine("Please Enter Dog Information");
             
-            Animals.Add(new Dog
+            Dogs.Add(new Dog
             {
                 dogBreed = dog.AddBreed(),
                 sex = dog.GetSex(),
                 name = dog.GetName(),
                 weight = dog.GetWeight(),
                 amountFoodPerDay = dog.GetAmountFedPerDay(),
-                hasShots = dog.HasShots(),
                 adoptionFee = dog.GetAdoptionFee(),
-                shelterCareGiver = dog.GetShelterCareGiver(),
                 hasBeenAdopted = dog.HasBeenAdopted()
             });
             return dog;
             
         }
 
-        public Dog removeDog()
+        public Dog RemoveDog()
         {
-            for (int i = 0; i < Animals.Count; i++)
+            for (int i = 0; i < Dogs.Count; i++)
             {
-                Animals.RemoveAt(0);
+                Dogs.RemoveAt(0);
             }
             return dog;
         }
-        public Cat AddCatToList()
+        public Cat AddCat()
         {
             Console.WriteLine("Please Enter Cat Information");
-
-            Animals.Add(new Cat
+       
+            Cats.Add(new Cat
             {
-                catBreed = cat.AddBreed(),
-                sex = cat.GetSex(),
                 name = cat.GetName(),
+                sex = cat.GetSex(),
                 weight = cat.GetWeight(),
                 amountFoodPerDay = cat.GetAmountFedPerDay(),
-                hasShots = cat.HasShots(),
                 adoptionFee = cat.GetAdoptionFee(),
-                shelterCareGiver = cat.GetShelterCareGiver(),
                 hasBeenAdopted = cat.HasBeenAdopted(),
                 cageNumber = cat.GetCurrentCageNumber()
             });
             return cat;
         }
 
-   
+        public void printShelterName()
+        {
+            Console.WriteLine(name);
+        }
 
-        public void printCareGiverList()
+        public void PrintCareGiverList()
         {
             foreach (CareGiver careGiver in CareGivers)
             {
-                Console.WriteLine(careGiver.display());
+                Console.WriteLine(careGiver.Display());
             }
         }
         
-        public void printAnimalList()
+        public void PrintDogs()
         {
             
-            foreach (Animal animal in Animals)
+            foreach (Dog dog in Dogs)
             {
-                Console.WriteLine(animal.Display());
+                Console.WriteLine(dog.Display());
             }
             
+        }
+
+        public void PrintCats()
+        {
+            foreach (Cat cat in Cats)
+            {
+                Console.WriteLine(cat.Display());
+            }
         }
   
    

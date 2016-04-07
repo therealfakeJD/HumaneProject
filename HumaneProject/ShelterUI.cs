@@ -7,86 +7,25 @@ using System.Threading.Tasks;
 
 namespace HumaneProject
 {
-    class ShelterUI
+    public class ShelterUI
     {
-        public int choice;
-        public bool systemOn = true;
-
         public ShelterUI()
         {
-          RunShelterUI();
+         
         }
-        public void RunShelterUI()
+
+        public void printWelcome()
         {
-            ShelterMethods shelterMethods = new ShelterMethods();
-
-            shelterMethods.printWelcome();
-           
-            while (systemOn)
-            {
-               
-                Console.WriteLine("Please select a menu option to manage the shelter");
-                Console.WriteLine("");
-                Console.WriteLine("1. Add a new orphaned Cat to the system");
-                Console.WriteLine("2. Add a new orphaned Dog to the system");
-                Console.WriteLine("3. Collect a profile from a possibly interested Care Giver");
-                Console.WriteLine("4. Print list of shelter animals currently in the system");
-                Console.WriteLine("5. Print list of potential Care Givers currently in the system");
-                Console.WriteLine("6. Remove a dog from the system");
-                Console.WriteLine("7. Exit Menu");
-                Console.WriteLine("");
-                choice = Convert.ToInt32(Console.ReadLine());
-
-                switch (choice)
-                {
-                    case 1:
-
-                        shelterMethods.addCats();
-                        break;
-
-                    case 2:
-
-                        shelterMethods.addDogs();
-                        break;
-
-                    case 3:
-
-                        shelterMethods.AddCareGiver();
-                        break;
-
-                    case 4:
-
-                        shelterMethods.printAnimalList();
-                        break;
-
-                    case 5:
-
-                        shelterMethods.printCareGivers();
-                        break;
-
-                    case 6:
-
-                        shelterMethods.removeDogs();
-                        break;
-
-                    case 7:
-
-                        systemOn = false;
-                        break;
-
-                    default:
-                        if (choice > 7)
-                        {
-                            Console.WriteLine("You must pick a number from the menu");
-                            Console.WriteLine("Please press enter to continue");
-                            Console.ReadLine();
-                            RunShelterUI();
-                        }
-                        break;
-                }
-               
-            }
-            Console.ReadLine();
+            Console.WriteLine("Welcome to Justin's Animal Shelter.");
+            Console.WriteLine("This is a relatively new shelter so as of today possible Care Givers have a choice of Dogs or Cats, " +
+                               "however, we will be expanding our care facilities soon... So there will be a greater selection of " +
+                               "animals to adopt in the future");
+            Console.WriteLine("");
+            Console.WriteLine("This System will be what you need to use to help possible Care Givers take home one of our wonderful " +
+                             " orphaned animals.");
+            Console.WriteLine("*****************************************************************************************************");
+            Console.WriteLine("Please press enter to see the menu");
+            Console.WriteLine("*****************************************************************************************************");
         }
     }
 }

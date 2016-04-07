@@ -13,7 +13,8 @@ namespace HumaneProject
         public int age { get; set; }
         public long socialSecurityNumber { get; set; }
         public string address { get; set; }
-        public bool adoptionFee { get; set; }
+        public bool adopt { get; set; }
+        public decimal careGiverWallet;
         public long phoneNumber { get; set; }
         public string adoptedName { get; set; }
         public int adoptedAge { get; set; }
@@ -25,7 +26,7 @@ namespace HumaneProject
 
         }
 
-        public string addName()
+        public string AddName()
         {
             Console.WriteLine("CareGiver Information: ");
             Console.WriteLine("Name:");
@@ -33,7 +34,7 @@ namespace HumaneProject
             return name;
         }
 
-        public int addAge()
+        public int AddAge()
         {
             Console.WriteLine("Age: ");
             try
@@ -43,12 +44,12 @@ namespace HumaneProject
             catch (Exception)
             {
                 Console.WriteLine("Invalid Entry -- Please enter a number");
-                addAge();
+                AddAge();
             }
             return age;
         }
 
-        public long addSocialSecurityNumber()
+        public long AddSocialSecurityNumber()
         {
             Console.WriteLine("Social Security Number: ");
             try
@@ -58,19 +59,19 @@ namespace HumaneProject
             catch (Exception)
             {
                 Console.WriteLine("Invalid Entry -- Please Enter a number");
-                addSocialSecurityNumber();
+                AddSocialSecurityNumber();
             }
             return socialSecurityNumber;
         }
 
-        public string addAddress()
+        public string AddAddress()
         {
             Console.WriteLine("Address: ");
             address = Console.ReadLine();
             return address;
         }
 
-        public long addPhoneNumber()
+        public long AddPhoneNumber()
         {
             Console.WriteLine("Phone Number: ");
             try
@@ -80,34 +81,30 @@ namespace HumaneProject
             catch (Exception)
             {
                 Console.WriteLine("Invalid Entry -- Please Enter a number");
-                addPhoneNumber();
+                AddPhoneNumber();
             }
             return phoneNumber;
         }
 
-        public bool getAdoptionFee()
+        public bool Adopt(Dog dog)
         {
-            Console.WriteLine("Adoption Fee: ");
-            if (adoptionFeePaid())
-            {
-                Console.WriteLine("Fee Paid");
-              
-            }
-            else if (adoptionFeePending())
-            {
-                Console.WriteLine("Fee Pending");
-            }
-            return adoptionFee;
+            careGiverWallet = new decimal(1000.00);
+            Console.WriteLine(careGiverWallet);
+            careGiverWallet -= dog.adoptionFee;
+            Console.WriteLine(careGiverWallet);
+            adopt = true;
+            return adopt;
         }
 
-        public string addAdoptedAnimalName()
+
+        public string AddAdoptedAnimalName()
         {
             Console.WriteLine("Adopted Animal's Name: ");
             adoptedName = Console.ReadLine();
             return adoptedName;
         }
 
-        public int addAdoptedAnimalAge()
+        public int AddAdoptedAnimalAge()
         {
             Console.WriteLine("Adopted Animal's Age: ");
             try
@@ -117,13 +114,12 @@ namespace HumaneProject
             catch (Exception)
             {
                 Console.WriteLine("Invalid Entry -- Please Enter a number");
-                addAdoptedAnimalAge();
+                AddAdoptedAnimalAge();
             }
             return adoptedAge;
         }
 
-      
-        public string display()
+        public string Display()
         {
             return "CareGiver Info: " 
                    + "\n"
@@ -132,22 +128,11 @@ namespace HumaneProject
                    + "\nSocial Security Number: " + socialSecurityNumber
                    + "\nAddress " + address
                    + "\nPhone Number " + phoneNumber
-                   + "\nAdoption Fee " + adoptionFee
                    + "\nAdopted Animal Name " + adoptedName
                    + "\nAdopted Animal Age " + adoptedAge
                    + "\n";
         }
-        public bool adoptionFeePaid()
-        {
-            adoptionFee = true;
-            return adoptionFee;
-        }
-
-        public bool adoptionFeePending()
-        {
-            adoptionFee = false;
-            return adoptionFee;
-        }
+        
 
 
     }
